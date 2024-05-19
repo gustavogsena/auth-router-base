@@ -12,7 +12,7 @@ import { HttpErrorHandler } from './util/middlewares/httpError.middleware';
 import Checker from '@src/util/services/checker.service';
 import { UserController } from '@src/user/user.controller';
 import { ValidationErrorHandler } from '@src/util/middlewares/validationError.middleware';
-import { RemoveKeysInterceptor } from '@src/util/interceptors/password.interceptor';
+import { KeyRemoverInterceptor } from '@src/util/interceptors/keyRemover.interceptor';
 import { Server } from 'node:http';
 
 
@@ -32,7 +32,7 @@ useExpressServer(app, {
     cors: true,
     controllers: [AuthController, UserController],
     middlewares: [HttpErrorHandler, DbErrorHandler, ValidationErrorHandler],
-    interceptors: [RemoveKeysInterceptor],
+    interceptors: [KeyRemoverInterceptor],
     defaultErrorHandler: false
 });
 

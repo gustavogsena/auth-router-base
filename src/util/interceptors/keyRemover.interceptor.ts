@@ -3,7 +3,7 @@ import { Service } from "typedi";
 
 @Service()
 @Interceptor()
-export class RemoveKeysInterceptor implements InterceptorInterface {
+export class KeyRemoverInterceptor implements InterceptorInterface {
     intercept(action: Action, content: any) {
         if (Array.isArray(content)) {
             content.forEach(item => {
@@ -17,7 +17,6 @@ export class RemoveKeysInterceptor implements InterceptorInterface {
             REMOVABLE_KEYS.forEach(keyToRemove => {
                 if (content.hasOwnProperty(keyToRemove)) delete content[keyToRemove]
             })
-
         }
 
         return content

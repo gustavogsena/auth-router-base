@@ -13,7 +13,6 @@ export function Authorization(allowedRole: Role[] = []) {
         }
         next(new AccessDeniedError(request))
     }
-
 }
 
 export function AuthorizationMiddleware(allowedRole: Role[] = []) {

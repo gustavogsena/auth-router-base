@@ -2,8 +2,8 @@ POST http://localhost:3333/user/register/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Pedro Lima",
-    "email": "pedro@mail.com",
+    "name": "Marcia Pedrosa",
+    "email": "marcia@mail.com",
     "role": "ADMIN",
     "password": "Pass123!",
     "passwordConfirm": "Pass123!"
